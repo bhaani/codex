@@ -1,22 +1,36 @@
 # Calculatrice
 
-Une petite calculatrice en ligne de commande, écrite en Python.
+Cette application propose maintenant **deux interfaces** :
+- une interface en ligne de commande (Python)
+- une interface web simple (HTML/JS)
 
-## Utilisation
+## 1) Interface en ligne de commande
 
 ```bash
 python calculatrice.py
 ```
 
-Exemple d'entrée :
+Exemple d'entrée :
 
 ```text
 2 + 3
 ```
 
-Opérateurs supportés : `+`, `-`, `*`, `/`.
+## 2) Interface utilisateur (web)
 
-## Tests
+Depuis la racine du projet, lancez un serveur statique :
+
+```bash
+python -m http.server 8000
+```
+
+Puis ouvrez :
+
+```text
+http://localhost:8000/ui/
+```
+
+## Tests Python
 
 ```bash
 python -m unittest -v
