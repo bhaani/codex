@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8">
+<style>
+@font-face{font-family:Cairo;font-weight:700;src:url(cairo-arabic-700-normal.woff2)}
+@font-face{font-family:Cairo;font-weight:700;src:url(cairo-latin-700-normal.woff2);unicode-range:U+0000-00FF}
+@font-face{font-family:Cairo;font-weight:800;src:url(cairo-arabic-800-normal.woff2)}
+@font-face{font-family:Cairo;font-weight:800;src:url(cairo-latin-800-normal.woff2);unicode-range:U+0000-00FF}
+@font-face{font-family:Plex;font-weight:400;src:url(ibm-plex-sans-arabic-arabic-400-normal.woff2)}
+@font-face{font-family:Plex;font-weight:400;src:url(ibm-plex-sans-arabic-latin-400-normal.woff2);unicode-range:U+0000-00FF}
+@font-face{font-family:Plex;font-weight:700;src:url(ibm-plex-sans-arabic-arabic-700-normal.woff2)}
+@font-face{font-family:Plex;font-weight:700;src:url(ibm-plex-sans-arabic-latin-700-normal.woff2);unicode-range:U+0000-00FF}
+@font-face{font-family:Amiri;font-weight:700;src:url(amiri-arabic-700-normal.woff2)}
+@font-face{font-family:Mono;src:url(GeistMono-Regular.ttf)}
+:root{--ink:#FFFFFF;--ink2:#F4F5FC;--paper:#000085;--soft:#3B3D8F;--muted:#6A6CA8;--line:rgba(0,0,133,.12);--acc:#FFDE00;--onacc:#000085;--glow:rgba(255,222,0,.10)}
+.valoris{--ink:#000085;--ink2:#00007A;--paper:#FFFFFF;--soft:#D5D7F5;--muted:#AEB2EC;--line:rgba(255,255,255,.16);--acc:#FFDE00;--onacc:#000085;--glow:rgba(40,40,190,.55)}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1350px;overflow:hidden}
+.poster{position:relative;width:1080px;height:1350px;padding:58px 68px 56px;color:var(--paper);font-family:Plex;
+  background:
+   radial-gradient(900px 600px at -5% -10%, var(--glow), transparent 60%),
+   
+   var(--ink);}
+.top{display:flex;justify-content:space-between;align-items:center;font-size:22px;color:var(--muted)}
+.chip{color:var(--onacc);background:var(--acc);padding:6px 22px 8px;border-radius:100px;font-weight:700;font-size:22px}
+h1{font-family:Cairo;font-weight:800;font-size:104px;line-height:1.12;margin-top:34px;letter-spacing:0}
+h1 em{font-family:Amiri;font-style:normal;font-weight:700;color:var(--paper);background:linear-gradient(transparent 58%, var(--acc) 58%, var(--acc) 86%, transparent 86%);padding:0 10px;font-size:112px;line-height:1.05;display:inline-block;margin-top:-6px}
+.sub{margin-top:14px;font-size:28px;line-height:1.55;color:var(--soft);max-width:900px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);margin-top:30px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.stat{padding:18px 0 16px;display:flex;align-items:center;gap:16px}
+.stat+.stat{border-right:1px solid var(--line);padding-right:30px}
+.stat b{font-family:Cairo;font-weight:800;font-size:64px;line-height:1;direction:ltr}
+.stat span{font-size:21px;line-height:1.35;color:var(--muted)}
+.label{font-size:20px;color:var(--muted);margin:26px 0 12px;display:flex;justify-content:space-between}
+.label .num{font-family:Mono;direction:ltr}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.cell{background:var(--ink2);border:1px solid transparent;border-radius:14px;padding:12px 18px 14px;height:114px;display:flex;flex-direction:column;justify-content:space-between}
+.cell i{font-family:Mono;font-style:normal;font-size:16px;color:#5759C9;letter-spacing:.08em;direction:ltr;text-align:right}
+.cell p{font-size:24px;line-height:1.3;font-weight:700}
+.method{margin-top:22px;font-size:21px;color:var(--soft);display:flex;gap:12px;align-items:center}
+.method .dot{width:7px;height:7px;border-radius:50%;background:var(--paper);display:inline-block}
+.foot{position:absolute;left:68px;right:68px;bottom:50px;padding-top:26px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}
+.trainer{display:flex;align-items:center;gap:20px}
+.av{width:120px;height:120px;border-radius:50%;overflow:hidden;flex:none;box-shadow:0 0 0 3px #fff,0 0 0 5px var(--paper)}
+.av img{width:100%;height:100%;object-fit:cover;display:block}
+.tk{font-size:18px;color:var(--muted)}
+.tn{font-family:Cairo;font-weight:800;font-size:40px;line-height:1.15}
+.tr{font-size:19px;color:var(--soft)}
+.cta{text-align:left;display:flex;flex-direction:column;align-items:flex-end;gap:10px}
+.btn{display:flex;align-items:center;gap:14px;background:var(--paper);color:#fff;border-radius:100px;padding:10px 12px 10px 28px}
+.btn svg{width:54px;height:54px;flex:none}
+.btn .t1{font-size:17px;font-weight:700;color:var(--acc)}
+.btn svg circle{fill:var(--acc)}
+.btn svg path{stroke:var(--paper)}
+.btn svg path+path{fill:var(--paper);stroke:none}
+.valoris .btn .t1{color:var(--ink)}
+.btn .t2{font-family:Cairo;font-weight:800;font-size:32px;line-height:1.1;direction:ltr;text-align:right}
+.note{font-size:17px;color:var(--muted)}
+</style></head><body>
+<div class="poster" id="p">
+  <div class="top"><span>تكوين تطبيقي · في تونس ولّا أونلاين</span><span class="chip">15 بلاصة برك</span></div>
+
+  <h1>تصرّف في مشروعك<br><em>كيف المحترفين.</em></h1>
+  <p class="sub">دورة تكوين في التصرّف للباعثين وأصحاب المشاريع في جميع القطاعات، باش تفهم أرقامك وتكبّر مشروعك.</p>
+
+  <div class="stats">
+    <div class="stat"><b>50</b><span>ساعة تكوين<br>تطبيقي <span dir="ltr">100%</span></span></div>
+    <div class="stat"><b>5</b><span>سوايع<br>في النهار</span></div>
+    <div class="stat"><b>15</b><span>مشارك<br>ماكسيموم</span></div>
+  </div>
+
+  <div class="label"><span>البرنامج · 9 محاور</span><span>تصرّف · مالية · قانون</span></div>
+  <div class="grid">
+    <div class="cell"><i>01</i><p>التسويق والتسويق الرقمي</p></div>
+    <div class="cell"><i>02</i><p>الشرا، البيع والفوترة</p></div>
+    <div class="cell"><i>03</i><p>المحاسبة ومسك الدفاتر</p></div>
+    <div class="cell"><i>04</i><p>التصرّف في المخزون</p></div>
+    <div class="cell"><i>05</i><p>حساب الكلفة</p></div>
+    <div class="cell"><i>06</i><p>التخطيط المالي</p></div>
+    <div class="cell"><i>07</i><p>الانتداب وعقود الخدمة</p></div>
+    <div class="cell"><i>08</i><p>التعامل مع صندوق الضمان الاجتماعي</p></div>
+    <div class="cell"><i>09</i><p>الواجبات والامتيازات الجبائية</p></div>
+  </div>
+
+  <div class="method"><span class="dot"></span>حالات من الواقع<span class="dot"></span>تمارين فردية وجماعية<span class="dot"></span>نتبادلو التجارب</div>
+
+  <div class="foot">
+    <div class="trainer">
+      <div class="av"><img src="anis_avatar.jpg" alt=""></div>
+      <div><div class="tk">يقدّمها</div><div class="tn">أنيس بحر</div><div class="tr">مكوّن ومستشار في التصرّف</div></div>
+    </div>
+    <div class="cta">
+      <div class="btn">
+        <div><div class="t1">احجز بلاصتك على الواتساب</div><div class="t2">20 698 016</div></div>
+        <svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="32" fill="currentColor"/>
+          <path d="M32 14c-9.9 0-18 7.6-18 17 0 3.3 1 6.4 2.8 9L15 50l10.3-2.7c2 .8 4.3 1.3 6.7 1.3 9.9 0 18-7.6 18-17s-8.1-17.6-18-17.6z" fill="none" stroke="var(--acc)" stroke-width="3.2" stroke-linejoin="round"/>
+          <path d="M25.3 23.5c.5-.5 1.3-.5 1.8 0l2.2 2.6c.4.5.4 1.2 0 1.7l-1.2 1.4c1 2.2 2.8 4 5 5.1l1.4-1.2c.5-.4 1.2-.4 1.7 0l2.6 2.2c.5.5.5 1.3 0 1.8l-1.5 1.6c-.9.9-2.3 1.2-3.5.7-4.6-1.9-8.2-5.6-10-10.2-.5-1.2-.2-2.5.7-3.4z" fill="var(--acc)"/></svg>
+      </div>
+    </div>
+  </div>
+</div>
+<!--if(location.hash==='#valoris')document.getElementById('p').classList.add('valoris')-->
+</body></html>
