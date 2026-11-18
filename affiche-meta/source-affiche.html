@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8">
+<style>
+@font-face{font-family:Brico;src:url(BricolageGrotesque-Bold.ttf)}
+@font-face{font-family:Inst;src:url(InstrumentSans-Regular.ttf);font-weight:400}
+@font-face{font-family:Inst;src:url(InstrumentSans-Bold.ttf);font-weight:700}
+@font-face{font-family:Serif;src:url(InstrumentSerif-Italic.ttf)}
+@font-face{font-family:Mono;src:url(GeistMono-Regular.ttf)}
+:root{--ink:#0E1A2B;--ink2:#15263D;--paper:#F4EEE3;--muted:#9FB0C4;--line:rgba(244,238,227,.14);--acc:#EE6A3C;}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1350px;background:var(--ink);overflow:hidden}
+.poster{position:relative;width:1080px;height:1350px;padding:64px 68px 56px;color:var(--paper);font-family:Inst;
+  background:
+   radial-gradient(900px 600px at 105% -10%, rgba(238,106,60,.20), transparent 60%),
+   repeating-linear-gradient(0deg, transparent 0 53px, rgba(244,238,227,.035) 53px 54px),
+   var(--ink);}
+.top{display:flex;justify-content:space-between;align-items:center;font-family:Mono;font-size:19px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.chip{color:var(--ink);background:var(--acc);padding:10px 18px;border-radius:100px;letter-spacing:.1em;font-size:18px}
+h1{font-family:Brico;font-size:104px;line-height:.95;letter-spacing:-.035em;margin-top:58px}
+h1 em{font-family:Serif;font-style:normal;font-weight:400;color:var(--acc);font-size:118px;letter-spacing:-.01em}
+.sub{margin-top:26px;font-size:28px;line-height:1.35;color:#D9D3C8;max-width:860px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);margin-top:40px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.stat{padding:22px 0 20px;display:flex;align-items:baseline;gap:14px}
+.stat+.stat{border-left:1px solid var(--line);padding-left:30px}
+.stat b{font-family:Brico;font-size:62px;letter-spacing:-.03em;line-height:1}
+.stat span{font-size:21px;line-height:1.2;color:var(--muted)}
+.label{font-family:Mono;font-size:17px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:34px 0 14px;display:flex;justify-content:space-between}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.cell{background:var(--ink2);border:1px solid var(--line);border-radius:14px;padding:16px 18px 16px;height:112px;display:flex;flex-direction:column;justify-content:space-between}
+.cell i{font-family:Mono;font-style:normal;font-size:16px;color:var(--acc);letter-spacing:.08em}
+.cell p{font-size:22px;line-height:1.18;font-weight:700;letter-spacing:-.005em}
+.method{margin-top:22px;font-size:20px;color:#D9D3C8;display:flex;gap:12px;align-items:center;flex-wrap:nowrap}
+.method .dot{width:6px;height:6px;border-radius:50%;background:var(--acc);display:inline-block}
+.foot{position:absolute;left:68px;right:68px;bottom:52px;padding-top:30px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:flex-end}
+.trainer{display:flex;align-items:center;gap:20px}
+.mono{width:84px;height:84px;border-radius:50%;border:2px solid var(--acc);display:grid;place-items:center;font-family:Brico;font-size:32px;letter-spacing:-.02em}
+.tk{font-family:Mono;font-size:15px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.tn{font-family:Brico;font-size:40px;letter-spacing:-.02em;line-height:1.05;margin-top:4px}
+.tr{font-size:19px;color:#D9D3C8;margin-top:2px}
+.cta{text-align:right}
+.btn{display:inline-block;background:var(--paper);color:var(--ink);font-weight:700;font-size:25px;padding:20px 30px;border-radius:100px}
+.btn span{color:var(--acc)}
+.org{font-size:16px;color:var(--muted);margin-top:14px}
+</style></head><body>
+<div class="poster">
+  <div class="top"><span>Formation pratique · Sousse</span><span class="chip">15 places seulement</span></div>
+
+  <h1>Gérez votre projet<br><em>comme un pro.</em></h1>
+  <p class="sub">Cycle de qualification complémentaire en gestion, pour les promoteurs et entrepreneurs de tous secteurs.</p>
+
+  <div class="stats">
+    <div class="stat"><b>50h</b><span>de formation<br>100&nbsp;% pratique</span></div>
+    <div class="stat"><b>5h</b><span>par jour,<br>en présentiel</span></div>
+    <div class="stat"><b>15</b><span>participants<br>maximum</span></div>
+  </div>
+
+  <div class="label"><span>Au programme · 9 modules</span><span>Gestion · Finance · Juridique</span></div>
+  <div class="grid">
+    <div class="cell"><i>01</i><p>Marketing &amp; marketing digital</p></div>
+    <div class="cell"><i>02</i><p>Achats &amp; facturation électronique</p></div>
+    <div class="cell"><i>03</i><p>Comptabilité &amp; tenue des registres</p></div>
+    <div class="cell"><i>04</i><p>Gestion des stocks</p></div>
+    <div class="cell"><i>05</i><p>Calcul des coûts</p></div>
+    <div class="cell"><i>06</i><p>Planification financière</p></div>
+    <div class="cell"><i>07</i><p>Recrutement &amp; contrats de travail</p></div>
+    <div class="cell"><i>08</i><p>Relations avec la CNSS</p></div>
+    <div class="cell"><i>09</i><p>Obligations &amp; avantages fiscaux</p></div>
+  </div>
+
+  <div class="method"><span class="dot"></span>Cas réels<span class="dot"></span>Exercices individuels &amp; en groupe<span class="dot"></span>Partage d'expériences</div>
+
+  <div class="foot">
+    <div class="trainer">
+      <div class="mono">AB</div>
+      <div><div class="tk">Animée par</div><div class="tn">Anis BHAR</div><div class="tr">Formateur &amp; consultant en gestion</div></div>
+    </div>
+    <div class="cta"><span class="btn">Réservez votre place <span>→</span></span>
+      <div class="org">Organisée par l'Espace Initiative de Sousse</div></div>
+  </div>
+</div>
+</body></html>
