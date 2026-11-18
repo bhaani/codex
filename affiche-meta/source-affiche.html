@@ -1,57 +1,77 @@
 <!doctype html>
 <html lang="fr"><head><meta charset="utf-8">
 <style>
-@font-face{font-family:Brico;src:url(BricolageGrotesque-Bold.ttf)}
+@font-face{font-family:Out;src:url(Outfit-Bold.ttf);font-weight:700}
+@font-face{font-family:Out;src:url(Outfit-Regular.ttf);font-weight:400}
 @font-face{font-family:Inst;src:url(InstrumentSans-Regular.ttf);font-weight:400}
 @font-face{font-family:Inst;src:url(InstrumentSans-Bold.ttf);font-weight:700}
-@font-face{font-family:Serif;src:url(InstrumentSerif-Italic.ttf)}
 @font-face{font-family:Mono;src:url(GeistMono-Regular.ttf)}
-:root{--ink:#0E1A2B;--ink2:#15263D;--paper:#F4EEE3;--muted:#9FB0C4;--line:rgba(244,238,227,.14);--acc:#EE6A3C;}
+:root{--navy:#000085;--deep:#00006A;--cell:#00007A;--yel:#FFDE00;--white:#FFFFFF;--soft:#C9CCF2;--line:rgba(255,255,255,.16)}
 *{margin:0;padding:0;box-sizing:border-box}
-html,body{width:1080px;height:1350px;background:var(--ink);overflow:hidden}
-.poster{position:relative;width:1080px;height:1350px;padding:64px 68px 56px;color:var(--paper);font-family:Inst;
-  background:
-   radial-gradient(900px 600px at 105% -10%, rgba(238,106,60,.20), transparent 60%),
-   repeating-linear-gradient(0deg, transparent 0 53px, rgba(244,238,227,.035) 53px 54px),
-   var(--ink);}
-.top{display:flex;justify-content:space-between;align-items:center;font-family:Mono;font-size:19px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
-.chip{color:var(--ink);background:var(--acc);padding:10px 18px;border-radius:100px;letter-spacing:.1em;font-size:18px}
-h1{font-family:Brico;font-size:104px;line-height:.95;letter-spacing:-.035em;margin-top:58px}
-h1 em{font-family:Serif;font-style:normal;font-weight:400;color:var(--acc);font-size:118px;letter-spacing:-.01em}
-.sub{margin-top:26px;font-size:28px;line-height:1.35;color:#D9D3C8;max-width:860px}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);margin-top:40px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.stat{padding:22px 0 20px;display:flex;align-items:baseline;gap:14px}
-.stat+.stat{border-left:1px solid var(--line);padding-left:30px}
-.stat b{font-family:Brico;font-size:62px;letter-spacing:-.03em;line-height:1}
-.stat span{font-size:21px;line-height:1.2;color:var(--muted)}
-.label{font-family:Mono;font-size:17px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:34px 0 14px;display:flex;justify-content:space-between}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-.cell{background:var(--ink2);border:1px solid var(--line);border-radius:14px;padding:16px 18px 16px;height:112px;display:flex;flex-direction:column;justify-content:space-between}
-.cell i{font-family:Mono;font-style:normal;font-size:16px;color:var(--acc);letter-spacing:.08em}
-.cell p{font-size:22px;line-height:1.18;font-weight:700;letter-spacing:-.005em}
-.method{margin-top:22px;font-size:20px;color:#D9D3C8;display:flex;gap:12px;align-items:center;flex-wrap:nowrap}
-.method .dot{width:6px;height:6px;border-radius:50%;background:var(--acc);display:inline-block}
-.foot{position:absolute;left:68px;right:68px;bottom:52px;padding-top:30px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:flex-end}
-.trainer{display:flex;align-items:center;gap:20px}
-.mono{width:84px;height:84px;border-radius:50%;border:2px solid var(--acc);display:grid;place-items:center;font-family:Brico;font-size:32px;letter-spacing:-.02em}
-.tk{font-family:Mono;font-size:15px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
-.tn{font-family:Brico;font-size:40px;letter-spacing:-.02em;line-height:1.05;margin-top:4px}
-.tr{font-size:19px;color:#D9D3C8;margin-top:2px}
-.cta{text-align:right}
-.btn{display:inline-block;background:var(--paper);color:var(--ink);font-weight:700;font-size:25px;padding:20px 30px;border-radius:100px}
-.btn span{color:var(--acc)}
-.org{font-size:16px;color:var(--muted);margin-top:14px}
+html,body{width:1080px;height:1350px;overflow:hidden;background:var(--navy)}
+.poster{position:relative;width:1080px;height:1350px;color:var(--white);font-family:Inst;overflow:hidden;
+  background:radial-gradient(700px 700px at 85% 25%, #0A0AA0 0%, transparent 70%), var(--navy)}
+.top{position:absolute;left:68px;right:68px;top:60px;display:flex;justify-content:space-between;align-items:center;z-index:5}
+.kick{font-family:Mono;font-size:18px;letter-spacing:.16em;text-transform:uppercase;color:var(--soft)}
+.chip{font-family:Mono;font-size:17px;letter-spacing:.1em;text-transform:uppercase;color:var(--navy);background:var(--yel);padding:10px 18px;border-radius:100px}
+
+.halo{position:absolute;width:470px;height:470px;border-radius:50%;background:var(--yel);left:575px;top:150px}
+.ring{position:absolute;width:560px;height:560px;border-radius:50%;border:2px solid rgba(255,222,0,.35);left:530px;top:105px}
+.photo{position:absolute;left:470px;top:96px;width:610px;height:610px;object-fit:cover;object-position:top}
+
+.hero{position:absolute;left:68px;top:150px;width:520px;z-index:4}
+h1{font-family:Out;font-weight:700;font-size:74px;line-height:1;letter-spacing:-.03em}
+h1 span{color:var(--yel)}
+.sub{margin-top:26px;font-size:24px;line-height:1.38;color:var(--soft);width:440px}
+
+.tag{position:absolute;left:68px;top:568px;z-index:6;display:flex;align-items:center;gap:16px}
+.tag .bar{width:6px;height:64px;background:var(--yel);border-radius:3px}
+.tk{font-family:Mono;font-size:15px;letter-spacing:.16em;text-transform:uppercase;color:var(--soft)}
+.tn{font-family:Out;font-weight:700;font-size:36px;letter-spacing:-.01em;line-height:1.05;margin-top:3px}
+.tr{font-size:18px;color:var(--soft);margin-top:2px}
+
+.band{position:absolute;left:0;right:0;top:706px;height:112px;background:var(--white);color:var(--navy);display:grid;grid-template-columns:1fr 1fr 1fr 1.25fr;padding:0 68px;z-index:3}
+.st{display:flex;align-items:center;gap:12px}
+.st+.st{border-left:1px solid rgba(0,0,133,.15);padding-left:24px}
+.st b{font-family:Out;font-weight:700;font-size:50px;letter-spacing:-.03em;line-height:1}
+.st span{font-size:18px;line-height:1.2;color:#3A3A8F}
+.st.loc b{font-size:28px;letter-spacing:-.01em;line-height:1.05}
+
+.label{position:absolute;left:68px;right:68px;top:846px;font-family:Mono;font-size:16px;letter-spacing:.16em;text-transform:uppercase;color:var(--soft);display:flex;justify-content:space-between}
+.grid{position:absolute;left:68px;right:68px;top:876px;display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.cell{background:var(--cell);border:1px solid var(--line);border-radius:12px;padding:13px 16px 13px;height:86px;display:flex;flex-direction:column;justify-content:space-between}
+.cell i{font-family:Mono;font-style:normal;font-size:14px;color:var(--yel);letter-spacing:.08em}
+.cell p{font-size:20px;line-height:1.15;font-weight:700}
+
+.foot{position:absolute;left:68px;right:68px;bottom:52px;height:120px;padding-top:26px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}
+.price{display:flex;align-items:baseline;gap:16px}
+.price b{font-family:Out;font-weight:700;font-size:76px;letter-spacing:-.03em;color:var(--yel);line-height:1}
+.price b small{font-size:34px;letter-spacing:0;margin-left:6px}
+.price span{font-size:19px;line-height:1.25;color:var(--soft)}
+.wa{display:flex;align-items:center;gap:16px;background:var(--yel);color:var(--navy);border-radius:100px;padding:14px 30px 14px 14px}
+.wa svg{width:58px;height:58px;flex:none}
+.wa .t1{font-family:Mono;font-size:14px;letter-spacing:.14em;text-transform:uppercase}
+.wa .t2{font-family:Out;font-weight:700;font-size:36px;letter-spacing:-.005em;line-height:1.05}
 </style></head><body>
 <div class="poster">
-  <div class="top"><span>Formation pratique · Sousse</span><span class="chip">15 places seulement</span></div>
+  <div class="top"><span class="kick">Formation pratique · Tunis ou en ligne</span><span class="chip">15 places seulement</span></div>
 
-  <h1>Gérez votre projet<br><em>comme un pro.</em></h1>
-  <p class="sub">Cycle de qualification complémentaire en gestion, pour les promoteurs et entrepreneurs de tous secteurs.</p>
+  <div class="ring"></div>
+  <div class="halo"></div>
+  <img class="photo" src="anis_cut.png" alt="">
 
-  <div class="stats">
-    <div class="stat"><b>50h</b><span>de formation<br>100&nbsp;% pratique</span></div>
-    <div class="stat"><b>5h</b><span>par jour,<br>en présentiel</span></div>
-    <div class="stat"><b>15</b><span>participants<br>maximum</span></div>
+  <div class="hero">
+    <h1>Gérez<br>votre projet<br><span>comme un pro.</span></h1>
+    <p class="sub">Qualification complémentaire en gestion pour promoteurs et entrepreneurs. Cas réels, exercices et partage d'expériences.</p>
+  </div>
+
+  <div class="tag"><div class="bar"></div><div><div class="tk">Animée par</div><div class="tn">Anis BHAR</div><div class="tr">Formateur &amp; consultant en gestion</div></div></div>
+
+  <div class="band">
+    <div class="st"><b>50h</b><span>de formation<br>pratique</span></div>
+    <div class="st"><b>5h</b><span>par<br>jour</span></div>
+    <div class="st"><b>15</b><span>participants<br>maximum</span></div>
+    <div class="st loc"><b>Tunis<br>ou en ligne</b></div>
   </div>
 
   <div class="label"><span>Au programme · 9 modules</span><span>Gestion · Finance · Juridique</span></div>
@@ -67,15 +87,14 @@ h1 em{font-family:Serif;font-style:normal;font-weight:400;color:var(--acc);font-
     <div class="cell"><i>09</i><p>Obligations &amp; avantages fiscaux</p></div>
   </div>
 
-  <div class="method"><span class="dot"></span>Cas réels<span class="dot"></span>Exercices individuels &amp; en groupe<span class="dot"></span>Partage d'expériences</div>
-
   <div class="foot">
-    <div class="trainer">
-      <div class="mono">AB</div>
-      <div><div class="tk">Animée par</div><div class="tn">Anis BHAR</div><div class="tr">Formateur &amp; consultant en gestion</div></div>
+    <div class="price"><b>500<small>DT</small></b><span>la formation<br>complète</span></div>
+    <div class="wa">
+      <svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="32" fill="#000085"/>
+        <path d="M32 14c-9.9 0-18 7.6-18 17 0 3.3 1 6.4 2.8 9L15 50l10.3-2.7c2 .8 4.3 1.3 6.7 1.3 9.9 0 18-7.6 18-17s-8.1-17.6-18-17.6z" fill="none" stroke="#FFDE00" stroke-width="3.2" stroke-linejoin="round"/>
+        <path d="M25.3 23.5c.5-.5 1.3-.5 1.8 0l2.2 2.6c.4.5.4 1.2 0 1.7l-1.2 1.4c1 2.2 2.8 4 5 5.1l1.4-1.2c.5-.4 1.2-.4 1.7 0l2.6 2.2c.5.5.5 1.3 0 1.8l-1.5 1.6c-.9.9-2.3 1.2-3.5.7-4.6-1.9-8.2-5.6-10-10.2-.5-1.2-.2-2.5.7-3.4z" fill="#FFDE00"/></svg>
+      <div><div class="t1">WhatsApp</div><div class="t2">20 698 016</div></div>
     </div>
-    <div class="cta"><span class="btn">Réservez votre place <span>→</span></span>
-      <div class="org">Organisée par l'Espace Initiative de Sousse</div></div>
   </div>
 </div>
 </body></html>
